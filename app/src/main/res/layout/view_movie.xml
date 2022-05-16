@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.stanga.movieFinder.model.Movie" />
+
+        <variable
+            name="movieFinderViewModel"
+            type="com.stanga.movieFinder.viewmodel.MovieFinderViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:background="@color/grey_light"
+            android:layout_width="60dp"
+            android:layout_height="90dp"
+            moviePosterImage="@{movie.poster}"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/imageView"
+            android:layout_toRightOf="@id/imageView"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@{movie.title}"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/tvTitle"
+            android:layout_toRightOf="@id/imageView"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@{movie.type}"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+</layout>
